@@ -1,13 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const OpenAI = require("openai");
+const { OpenAI } = require("openai"); // Achte auf geschweifte Klammern
 
 const app = express();
 app.use(bodyParser.json());
 
 // OpenAI initialisieren
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 // Webhook Endpoint
